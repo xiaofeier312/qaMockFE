@@ -54,6 +54,7 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
+import { getProject } from '@/api/mockProject'
 
 export default {
   name: 'Login',
@@ -94,6 +95,9 @@ export default {
       immediate: true
     }
   },
+  created() {
+    this.getMockProjectService()
+  },
   methods: {
     showPwd() {
       if (this.passwordType === 'password') {
@@ -120,6 +124,11 @@ export default {
           return false
         }
       })
+    },
+    getMockProjectService() {
+      const res = getProject()
+      console.log('--get mock project:')
+      console.log(res)
     }
   }
 }
