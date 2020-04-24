@@ -10,25 +10,42 @@
     >
       <el-table-column align="center" label="ID" width="95">
         <template slot-scope="scope">
-          {{ scope.$index }}
+          {{ scope.row.id }}
         </template>
       </el-table-column>
-      <el-table-column label="Title">
+      <el-table-column label="Name" width="110" align="center">
         <template slot-scope="scope">
-          {{ scope.row.title }}
+          {{ scope.row.name }}
         </template>
       </el-table-column>
-      <el-table-column label="Author" width="110" align="center">
+      <el-table-column label="key context" width="110" align="center">
         <template slot-scope="scope">
-          <span>{{ scope.row.author }}</span>
+          <span>{{ scope.row.key_context }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="Pageviews" width="110" align="center">
+      <el-table-column label="global resp switch" width="110" align="center">
         <template slot-scope="scope">
-          {{ scope.row.pageviews }}
+          {{ scope.row.global_resp_switch }}
         </template>
       </el-table-column>
-      <el-table-column class-name="status-col" label="Status" width="110" align="center">
+
+      <el-table-column label="global resp text">
+        <template slot-scope="scope">
+          {{ scope.row.global_resp_text }}
+        </template>
+      </el-table-column>
+      <el-table-column label="record switch" width="110" align="center">
+        <template slot-scope="scope">
+          {{ scope.row.record_switch }}
+        </template>
+      </el-table-column>
+      <el-table-column label="redirect ip" width="130" align="center">
+        <template slot-scope="scope">
+          {{ scope.row.redirect_ip }}
+        </template>
+      </el-table-column>
+
+      <!-- <el-table-column class-name="status-col" label="Status" width="110" align="center">
         <template slot-scope="scope">
           <el-tag :type="scope.row.status | statusFilter">{{ scope.row.status }}</el-tag>
         </template>
@@ -38,13 +55,14 @@
           <i class="el-icon-time" />
           <span>{{ scope.row.display_time }}</span>
         </template>
-      </el-table-column>
+      </el-table-column> -->
     </el-table>
   </div>
 </template>
 
 <script>
 import { getList } from '@/api/table'
+import { getProject } from '@/api/mockProject'
 
 export default {
   filters: {
@@ -64,7 +82,7 @@ export default {
     }
   },
   created() {
-    this.fetchData()
+    this.getMockProjectService()
   },
   methods: {
     fetchData() {
@@ -73,6 +91,18 @@ export default {
         this.list = response.data.items
         this.listLoading = false
       })
+    },
+    async getMockProjectService() {
+      this.listLoading = true
+      const res = await getProject()
+      this.list = res
+      this.listLoading = false
+      console.log('--get mock project :')
+      console.log(res)
+      // getProject().then(response => {
+      //   console.log('--get mock project:')
+      //   console.log(response)
+      // })
     }
   }
 }

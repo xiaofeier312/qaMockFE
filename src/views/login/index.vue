@@ -54,7 +54,7 @@
 
 <script>
 import { validUsername } from '@/utils/validate'
-import { getProject } from '@/api/mockProject'
+// import { getProject } from '@/api/mockProject'
 
 export default {
   name: 'Login',
@@ -96,7 +96,7 @@ export default {
     }
   },
   created() {
-    this.getMockProjectService()
+    // this.getMockProjectService()
   },
   methods: {
     showPwd() {
@@ -124,16 +124,16 @@ export default {
           return false
         }
       })
-    },
-    async getMockProjectService() {
-      const res = await getProject()
-      console.log('--get mock project:')
-      console.log(res)
-      // getProject().then(response => {
-      //   console.log('--get mock project:')
-      //   console.log(response)
-      // })
     }
+    // async getMockProjectService() {
+    //   const res = await getProject()
+    //   console.log('--get mock project:')
+    //   console.log(res)
+    //   // getProject().then(response => {
+    //   //   console.log('--get mock project:')
+    //   //   console.log(response)
+    //   // })
+    // }
   }
 }
 </script>
