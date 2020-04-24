@@ -125,10 +125,14 @@ export default {
         }
       })
     },
-    getMockProjectService() {
-      const res = getProject()
+    async getMockProjectService() {
+      const res = await getProject()
       console.log('--get mock project:')
       console.log(res)
+      // getProject().then(response => {
+      //   console.log('--get mock project:')
+      //   console.log(response)
+      // })
     }
   }
 }
