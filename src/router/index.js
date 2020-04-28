@@ -59,20 +59,20 @@ export const constantRoutes = [
     path: '/example',
     component: Layout,
     redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    name: 'Mock',
+    meta: { title: 'Mock', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
+        path: 'mockproject',
+        name: 'Mock Project',
+        component: () => import('@/views/mockproject/index'),
+        meta: { title: 'Mock Project', icon: 'table' }
       },
       {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'mockapi',
+        name: 'Mock API',
+        component: () => import('@/views/mockapi/index'),
+        meta: { title: 'Mock API', icon: 'tree' }
       }
     ]
   },
