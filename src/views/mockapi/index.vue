@@ -28,7 +28,7 @@
           <span>{{ scope.row.uri }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="match_type" width="105" align="center">
+      <el-table-column label="match type" width="70" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.match_type }}</span>
         </template>
@@ -38,7 +38,7 @@
           <span>{{ scope.row.mockProject.name }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="priority" width="105" align="center">
+      <el-table-column label="priority" width="80" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.priority }}</span>
         </template>
@@ -48,32 +48,32 @@
           {{ scope.row.description }}
         </template>
       </el-table-column>
-      <el-table-column label="lazy_time" width="105" align="center">
+      <el-table-column label="lazy time" width="55" align="center">
         <template slot-scope="scope">
           {{ scope.row.lazy_time }}
         </template>
       </el-table-column>
-      <el-table-column label="resp_code" width="105" align="center">
+      <el-table-column label="resp code" width="55" align="center">
         <template slot-scope="scope">
           {{ scope.row.resp_code }}
         </template>
       </el-table-column>
-      <el-table-column label="resp_header" width="105" align="center">
+      <el-table-column label="resp header" width="105" align="center">
         <template slot-scope="scope">
           {{ scope.row.resp_header }}
         </template>
       </el-table-column>
-      <el-table-column label="resp_text">
+      <el-table-column label="resp text">
         <template slot-scope="scope">
           {{ scope.row.resp_text }}
         </template>
       </el-table-column>
-      <el-table-column label="resp_type" width="105" align="center">
+      <el-table-column label="resp type" width="55" align="center">
         <template slot-scope="scope">
           {{ scope.row.resp_type }}
         </template>
       </el-table-column>
-      <el-table-column label="status_switch" width="105" align="center">
+      <el-table-column label="status switch" width="70" align="center">
         <template slot-scope="scope">
           {{ scope.row.status_switch }}
         </template>
